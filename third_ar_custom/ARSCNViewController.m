@@ -7,8 +7,10 @@
 //
 
 #import "ARSCNViewController.h"
+#import "PBRMaterial.h"
 @import ARKit;
 @import SceneKit;
+
 
 typedef NS_OPTIONS(NSUInteger, CollisionCategory) {
     CollisionCategoryBottom  = 1 << 0,
@@ -230,9 +232,7 @@ typedef NS_OPTIONS(NSUInteger, CollisionCategory) {
     node.physicsBody.mass = 2;
     node.physicsBody.categoryBitMask = CollisionCategoryCube;
     
-    SCNMaterial *material = [SCNMaterial material];
-    
-    
+    node.geometry.materials = @[[PBRMaterial materialNamed:@"granitesmooth"]];
     
     
     
